@@ -1,0 +1,136 @@
+@mixin flexCol () {
+    display: flex;
+    flex-direction: column;
+}
+
+.Main {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width:100%;
+        height: 100%;
+
+    &Overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+    
+    &Wrapper {
+        position:fixed;
+        background: white;
+        width: 40%;
+        height: 60%;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 2;
+
+        &Title {
+            font-size: 26px;
+            text-align: center;
+        }
+
+        &Features {
+            height: 75%;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            margin: auto;
+            width: 80%;
+
+            &Name {
+                @include flexCol();
+                
+                label {
+                    font-size: 18px;
+                }
+
+                input {
+                    border: 2px solid rgba(128, 128, 128, 0.5);
+                    outline:none;
+                    font-size: 16px;
+                    padding: 5px;
+                    margin-top: 10px;
+
+                }
+            }
+
+            &Сharacteristic {
+                display: flex;
+                flex-direction: row;
+
+                label {
+                    font-size: 18px;
+                    margin-right: 10px
+                }
+
+                &List {
+                    margin-right: 40px;
+                    border: 2px solid rgba(128, 128, 128, 0.5);
+                    padding: 3px;
+                    cursor: pointer;
+                    position: relative;
+                }
+
+                &Attribute {
+                    position: absolute;
+                }
+            }
+
+            &Description {
+                @include flexCol();
+                height: 40%;
+
+                label {
+                    font-size: 18px;
+                }
+
+                textarea {
+                    margin-top: 10px;
+                    outline:none;
+                    height: 100%;
+                    font-size: 16px;
+                    padding: 5px 10px;
+                    border: 2px solid rgba(128, 128, 128, 0.5);
+                    resize: none;
+                }
+            }
+        }
+
+        &Add {
+            width: 20%;
+            align-self: center;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 5px;
+            color: white;
+            background-color: #40b844;
+            border: none;
+
+            &:hover {
+                background-color: #4caf4fc3;
+            }
+
+            &:disabled {
+                background-color: rgba(128, 128, 128, 0.3);
+                cursor: default;
+            }
+        }
+
+        &Close {
+            font-size: 25px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+        }
+    }
+}
+

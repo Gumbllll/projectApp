@@ -1,0 +1,26 @@
+.Main {
+
+    &Wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border: 3px solid rgba(128, 128, 128, 0.4);
+        height: 40px;
+        align-items: center;
+        padding: 5px;
+        margin-bottom: 10px;
+        text-align: center;
+        
+        div{
+            overflow: hidden; 
+            white-space: nowrap; 
+            text-overflow: ellipsis; 
+        }
+
+        &Options {
+            display: flex;
+            justify-content: space-around;
+            font-size: 20px;
+        }
+    }
+}

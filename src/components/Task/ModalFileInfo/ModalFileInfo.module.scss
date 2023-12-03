@@ -1,0 +1,84 @@
+.Main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+
+    &Overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    &Wrapper {
+        position:fixed;
+        background: white;
+        width: 50%;
+        max-height: calc(100vh - 50px);
+        overflow: auto;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;
+
+        &Title{
+            text-align: center;
+            font-size: 26px;
+        }
+
+        &Info {
+            flex: 1 1 auto;
+            width: 90%;
+            align-self: center;
+            margin-top: 20px;
+
+            &Feature {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+        
+        &Upload {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            &Add {
+                margin-top: 10px;
+                width: 20%;
+                align-self: center;
+                font-size: 15px;
+                cursor: pointer;
+                padding: 5px;
+                color: white;
+                background-color: #40b844;
+                border: none;
+    
+                &:hover {
+                    background-color: #4caf4fc3;
+                }
+    
+                &:disabled {
+                    background-color: rgba(128, 128, 128, 0.3);
+                    cursor: default;
+                }
+            }
+        }
+
+        &Close {
+            font-size: 25px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+        }
+    }
+}

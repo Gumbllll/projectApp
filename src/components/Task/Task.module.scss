@@ -1,0 +1,37 @@
+.Main {
+    margin-bottom:10px;
+
+    &Wrapper {
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border: 3px solid rgba(128, 128, 128, 0.4);
+        height: 40px;
+        align-items: center;
+        padding: 10px;
+
+        &:hover {
+            background-color: rgba(128, 128, 128, 0.1);
+        }
+
+        &Data {
+            display: flex;
+
+            &Title {
+                margin-left: 10px;
+            }
+        }
+
+        &Options {
+
+            &File {
+                margin-right: 10px;
+            }
+
+            &Edit {
+                margin-right: 10px;
+            }
+        }
+    }
+}

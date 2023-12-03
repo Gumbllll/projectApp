@@ -1,0 +1,158 @@
+@mixin flexBetween() {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin inputAdd() {
+    border: none;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.5);
+    outline:none;
+    font-size: 16px;
+}
+
+.Main {
+
+    &Overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 0, 0, 0.5);
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    &Wrapper {
+        position:fixed;
+        background: white;
+        width: 50%;
+        max-height: calc(100vh - 50px);
+        overflow: auto;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        padding: 20px 50px;
+        display: flex;
+        flex-direction: column;
+        z-index: 2;  
+
+        &Close {
+            font-size: 25px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+        }
+
+        &Text {
+            text-align: center;
+
+            &Title {
+                font-size: 30px;
+                padding-bottom: 10px;
+            }
+        }
+
+        &Info {
+            padding-top: 10px;
+            font-size: 18px;
+            border-bottom: 2px solid rgba(128, 128, 128, 0.4);
+
+            &Creating {
+                @include flexBetween();
+                margin-bottom: 20px;
+            }
+
+            &Done{ 
+                @include flexBetween();
+                margin-bottom: 20px;
+            }
+
+            &Inwork {
+                @include flexBetween();
+                margin-bottom: 20px;
+            }
+
+            &Priority {
+                @include flexBetween();
+                margin-bottom: 20px;
+            }
+
+            &Status {
+                @include flexBetween();
+                margin-bottom: 20px;
+            }
+        }
+
+        &Subtasks {
+            border-bottom: 2px solid rgba(128, 128, 128, 0.4);
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &List {
+                width: 50%;
+            }
+
+            &Form {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &Add {
+                    margin: 10px 0px;
+                    border: none;
+                    font-size: 18px;
+                    text-align: center;
+                    width: 50%;
+                    outline: none;
+                }
+
+                svg {
+                    font-size: 22px;
+                    background-color: rgb(59, 180, 96);
+                    color: white;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &Comments {
+            padding-top: 5px;
+            display: flex;
+            flex-direction: column;
+
+            &Form {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &List {
+                    width: 100%;
+                }
+    
+                &Add {
+                    align-self: center;
+                    margin: 10px 0px;
+                    border: none;
+                    font-size: 18px;
+                    text-align: center;
+                    width: 50%;
+                    outline: none;
+                }
+
+                svg {
+                    font-size: 22px;
+                    background-color: rgb(59, 180, 96);
+                    color: white;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
