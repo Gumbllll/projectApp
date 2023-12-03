@@ -13,7 +13,7 @@ interface IModalAddProject {
 }
 
 const ModalAddProject: FC<IModalAddProject> = ({modalProject, setModalProject}) => {
-    const projects = useAppSelector(state => state.project.projects);
+    const projects = useAppSelector<any>(state => state.project.projects);
 
     const [ projectTitle, setProjectTitle ] = useState('');
 
@@ -30,7 +30,7 @@ const ModalAddProject: FC<IModalAddProject> = ({modalProject, setModalProject}) 
     const handleAddProject = () => {
         const flag = getFlag(projectTitle);
 
-        const exists =  projects.find(item => item.flag === flag);
+        const exists =  projects.find((item: any) => item.flag === flag);
 
         if(!exists) {
             const project = {

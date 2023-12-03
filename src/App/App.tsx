@@ -10,6 +10,8 @@ function App() {
 
   const projects = useAppSelector(state => state.project.projects);
 
+  console.log(projects)
+
   useEffect(() => {
     localStorage.setItem('projects', JSON.stringify(projects))
   }, [projects]);
@@ -22,7 +24,7 @@ function App() {
           <h1>Проекты</h1>
         </div>
         <div className={styles.AppWrapperList}>
-          {projects.map((project) => <Project key={project.id} title={project.title} id={project.id} flag={project.flag}/>)}
+          {projects.map((project: any) => <Project key={project.id} title={project.title} id={project.id} flag={project.flag}/>)}
         </div>
         <div className={styles.AppWrapperAdd}>
           <button onClick={() => setModalProject(true)}>Добавить</button>

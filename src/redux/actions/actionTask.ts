@@ -35,4 +35,11 @@ export const editTask = (payload: any) => {
     }
 }
 
+export const updateFlag = (payload: any) => {
+    return {
+        type: TaskActions.UPDATE_FLAG,
+        payload,
+    }
+}
+
 

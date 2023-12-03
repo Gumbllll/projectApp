@@ -7,6 +7,7 @@ export enum TaskActions {
   MOVE_TASK = 'MOVE_TASK',
   ADD_NEW_TASK_LIST = 'ADD_NEW_TASK_LIST',
   SEARCH_TASK = 'SEARCH_TASK',
+  UPDATE_FLAG = 'UPDATE_FLAG',
 }
 
 interface ITaskItem {
@@ -150,6 +151,16 @@ export const taskReducer = (
             )))
           }
         }
+      }
+    }
+    case TaskActions.UPDATE_FLAG: {
+      const { newFlag, flag} = action.payload
+      const oldItems = {...state[flag]}
+      delete state[flag];
+
+      return {
+        ...state,
+        [newFlag]: oldItems
       }
     }
     default:

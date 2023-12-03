@@ -1,8 +1,9 @@
-interface IProjectItem {
+export interface IProjectItem {
     id: string,
     title: string | null,
     flag: string,
     newTitle?: string,
+    newFlag?: string,
 }
 
 interface IProjectList {
@@ -14,10 +15,10 @@ interface IPayload {
     payload: IProjectItem,
 }
 
-const data = JSON.parse(localStorage.getItem('projects') || '[]');
+const date = JSON.parse(localStorage.getItem('projects') || '[]');
 
 const initialState: IProjectList = {
-    projects: data,
+    projects: date,
 }
 
 export enum ProjectActions {
@@ -26,7 +27,7 @@ export enum ProjectActions {
     EDIT_PROJECT = 'EDIT_PROJECT',
 }
 
-export const projectReducer = (state = initialState, action: IPayload) => {
+export const projectReducer = (state: IProjectList = initialState, action: IPayload) => {
     switch(action.type) {
         case ProjectActions.ADD_PROJECT: {
             const projectList = [...state.projects, action.payload];
@@ -35,9 +36,18 @@ export const projectReducer = (state = initialState, action: IPayload) => {
             }
         }
         case ProjectActions.DELETE_PROJECT: {
-            const newList = state.projects.filter(item => item.id !== action.payload.id)
+            const newList = state.projects.filter((item) => item.id !== action.payload.id)
             return {
                 ...state, projects: newList,
+            }
+        }
+        case ProjectActions.EDIT_PROJECT: {
+            const { id, newTitle, newFlag} = action.payload
+           
+            return {
+                projects: state.projects.map((item: any) => item.id === id 
+                    ? {...item, title: newTitle, flag: newFlag} : item 
+                )
             }
         }
         default: return state
