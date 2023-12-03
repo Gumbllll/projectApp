@@ -14,7 +14,8 @@ interface IProject {
 const Project: FC<IProject> = ({title, flag, id}) => {
     const dispatch = useAppDispatch();
 
-    const handleDeleteProject = () => {
+    const handleDeleteProject = (e: React.MouseEvent<SVGElement, MouseEvent>) => {
+        e.preventDefault();
         dispatch(deleteProject({id}));   
     }
 
@@ -24,7 +25,7 @@ const Project: FC<IProject> = ({title, flag, id}) => {
                 {title}             
             </div>
             <AiFillEdit className={styles.MainEdit}/>
-            <AiFillDelete onClick={handleDeleteProject} className={styles.MainDelete}/>
+            <AiFillDelete onClick={(e) => handleDeleteProject(e)} className={styles.MainDelete}/>
         </Link>
     )
 }
