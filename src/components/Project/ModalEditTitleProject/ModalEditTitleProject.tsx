@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import styles from './ModalEditTitle.module.scss'
+import styles from './ModalEditTitleProject.module.scss'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { useAppDispatch } from '../../../redux/hooks'
 import { editProject } from '../../../redux/actions/actionProject'
@@ -12,7 +12,7 @@ interface IModalEditTitle {
     setModalTitle: (item: boolean) => void,
 }
 
-const ModalEditTitle: FC<IModalEditTitle> = ({ flag, id, setModalTitle }) => {
+const ModalEditTitleProject: FC<IModalEditTitle> = ({ flag, id, setModalTitle }) => {
     const [ newTitle, setNewTitle ] = useState('')
 
     const dispatch = useAppDispatch();
@@ -37,4 +37,4 @@ const ModalEditTitle: FC<IModalEditTitle> = ({ flag, id, setModalTitle }) => {
     )
 }
 
-export default ModalEditTitle
+export default ModalEditTitleProject

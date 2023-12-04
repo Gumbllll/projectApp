@@ -9,7 +9,7 @@
         border: 3px solid rgba(128, 128, 128, 0.4);
         height: 40px;
         align-items: center;
-        padding: 10px;
+        padding: 0px 10px;
 
         &:hover {
             background-color: rgba(128, 128, 128, 0.1);
@@ -17,20 +17,47 @@
 
         &Data {
             display: flex;
+            width: 60%;
 
             &Title {
                 margin-left: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
         }
 
         &Options {
+            height: 100%;
+            display: flex;
 
-            &File {
-                margin-right: 10px;
+            &F{
+                height: 100%;
+                display: flex;
+
+                &File {
+                    margin-right: 10px;
+                    align-self: center;
+                }
             }
 
-            &Edit {
-                margin-right: 10px;
+            &E {
+                height: 100%;
+                display: flex;
+
+                &Edit {
+                    margin-right: 10px;
+                    align-self: center;
+                }
+            }
+
+            &D {
+                height: 100%;
+                display: flex;
+
+                &Delete {
+                    align-self: center;
+                }
             }
         }
     }

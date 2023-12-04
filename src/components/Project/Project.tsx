@@ -4,7 +4,7 @@ import { deleteProject } from "../../redux/actions/actionProject";
 import { useAppDispatch } from "../../redux/hooks";
 import { Link } from "react-router-dom";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
-import ModalEditTitle from "./ModalEditTitle/ModalEditTitle";
+import ModalEditTitleProject from "./ModalEditTitleProject/ModalEditTitleProject";
 
 interface IProject {
     id: string,
@@ -29,7 +29,7 @@ const Project: FC<IProject> = ({title, flag, id}) => {
 
     return (
         <>
-            {modalTitle && <ModalEditTitle flag={flag} id={id} setModalTitle={setModalTitle}/>}
+            {modalTitle && <ModalEditTitleProject flag={flag} id={id} setModalTitle={setModalTitle}/>}
             <Link to={`project/${flag}`} className={styles.Main}>
                 <div className={styles.MainWrapper}>               
                     {title}             

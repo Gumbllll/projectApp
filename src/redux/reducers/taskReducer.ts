@@ -139,15 +139,15 @@ export const taskReducer = (
       return prevState;    
     }
     case TaskActions.EDIT_TASK: {
-      const { flag, newTitle, statusTask } = action.payload;
+      const { flag, newTitle, status, id } = action.payload;
 
       return {
         ...state,
         [flag]: {
           ...state[flag],
-          [statusTask]: {
-            tasks: (state[flag][statusTask].tasks.map((item: any) => (
-              item.flag === flag ? {...item, title: newTitle} : item
+          [status]: {
+            tasks: (state[flag][status].tasks.map((item: any) => (
+              item.id === id ? {...item, title: newTitle} : item
             )))
           }
         }
