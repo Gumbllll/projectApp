@@ -36,6 +36,20 @@
         flex-direction: column;
         z-index: 2;  
 
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background-color: rgba(128, 128, 128, 0.4);
+            border-radius: 100px;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            border-radius: 20px;
+            background-color: rgba(128, 128, 128, 0.6);
+        }
+
         &Close {
             font-size: 25px;
             position: absolute;

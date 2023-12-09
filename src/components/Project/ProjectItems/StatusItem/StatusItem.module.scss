@@ -3,10 +3,25 @@
     box-shadow: 0px 1px 14px 0px rgba(34, 60, 80, 0.2);
     padding: 15px 20px;
     flex-direction: column;
-    overflow: auto;   
+    overflow: auto;  
+    height: calc(100vh - 200px); 
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: rgba(128, 128, 128, 0.4);
+        border-radius: 100px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background-color: rgba(128, 128, 128, 0.6);
+    }
 
     &Wrapper {
-        
+
         &Title {
             align-self: center;
             font-size: 20px;

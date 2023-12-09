@@ -52,7 +52,6 @@ const ModalAddProject: FC<IModalAddProject> = ({modalProject, setModalProject}) 
             <div className={styles.MainWrapper}>
                 <div className={styles.MainWrapperModal}>
                     <AiOutlineCloseCircle className={styles.MainWrapperModalClose} onClick={() => setModalProject(false)}/>
-                    <label className={styles.MainWrapperModalTitle}>Название проекта</label>
                     <input ref={refInput} placeholder='Введите название проекта' value={projectTitle} onChange={(e) => setProjectTitle(e.target.value)} className={styles.MainWrapperModalInput} type="text"/>
                     <button disabled={projectTitle === ''} onClick={handleAddProject} className={styles.MainWrapperModalAdd}>Добавить</button>
                 </div>

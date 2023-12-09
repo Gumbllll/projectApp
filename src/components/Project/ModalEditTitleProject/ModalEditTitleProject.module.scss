@@ -10,7 +10,7 @@
         width: 100%;
         height: 100%;
         background: rgb(0, 0, 0, 0.5);
-        z-index: 3;
+        z-index: 1;
     }
 
     &Wrapper {
@@ -24,8 +24,22 @@
         padding: 0px 20px;
         display: flex;
         flex-direction: column;
-        z-index: 3;
+        z-index: 2;
         justify-content: center;
+
+        @media (max-width: 1250px) {
+            width: 50%;
+            height: 25%;
+            justify-content: space-evenly;
+        }
+
+        @media (max-width: 670px) {
+            width: 70%;
+        }
+
+        @media (max-width: 500px) {
+            width: 90%;
+        }
 
         &Input {
             border: none;
@@ -33,6 +47,16 @@
             outline:none;
             font-size: 18px;
             margin-bottom: 15px;
+            width: 90%;
+            align-self: center;
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+            }
+
+            @media (max-width: 375px) {
+                font-size: 14px;
+            }
         }
 
         &Close {
@@ -41,6 +65,14 @@
             top: 10px;
             right: 10px;
             cursor: pointer;
+
+            @media (max-width: 1250px) {
+                font-size: 25px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 20px;
+            }
         }
 
         &Add {
@@ -52,6 +84,23 @@
             color: white;
             background-color: #40b844;
             border: none;
+
+            @media (max-width: 1250px) {
+                font-size: 23px;
+            }
+
+            @media (max-width: 1024px) {
+                font-size: 18px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+            }
+
+            @media (max-width: 375px) {
+                font-size: 18px;
+                width: 40%;
+            }
 
             &:hover {
                 background-color: #4caf4fc3;

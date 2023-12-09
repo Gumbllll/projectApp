@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className={styles.App}>
-      {modalProject ? <ModalAddProject modalProject={modalProject} setModalProject={setModalProject}/> : ''}
+      {modalProject && <ModalAddProject modalProject={modalProject} setModalProject={setModalProject}/>}
       <div className={styles.AppWrapper}>
         <div className={styles.AppWrapperTitle}>
           <h1>Проекты</h1>

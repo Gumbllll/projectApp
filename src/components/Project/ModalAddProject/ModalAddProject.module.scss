@@ -27,7 +27,20 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-evenly;
+
+            @media (max-width: 1024px) {
+                width: 50%;
+                height: 25%;
+            }
+
+            @media (max-width: 768px) {
+                width: 80%;
+            }
+
+            @media (max-width: 425px) {
+                width: 90%;
+            }
 
             &Title {
                 font-size: 20px;
@@ -50,6 +63,21 @@
                 background-color: #40b844;
                 border: none;
 
+                @media (max-width: 1024px) {
+                    width: 30%;
+                    height: 30%;
+                    font-size: 20px;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 15px;
+                    width: 30%;
+                }
+
+                @media (max-width: 425px) {
+                    width: 45%;
+                }
+
                 &:hover {
                     background-color: #4caf4fc3;
                 }
@@ -66,6 +94,10 @@
                 top: 10px;
                 right: 10px;
                 cursor: pointer;
+
+                @media (max-width: 1024px) {
+                    font-size: 23px;
+                }
             }
         }
     }

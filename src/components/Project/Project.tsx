@@ -29,7 +29,9 @@ const Project: FC<IProject> = ({title, flag, id}) => {
 
     return (
         <>
-            {modalTitle && <ModalEditTitleProject flag={flag} id={id} setModalTitle={setModalTitle}/>}
+            <div className={styles.Background}>
+                {modalTitle && <ModalEditTitleProject flag={flag} id={id} setModalTitle={setModalTitle}/>}
+            </div>
             <Link to={`project/${flag}`} className={styles.Main}>
                 <div className={styles.MainWrapper}>               
                     {title}             

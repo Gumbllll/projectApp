@@ -1,25 +1,54 @@
+.Background {
+    position: absolute;
+    z-index: 1;
+}
+
 .Main {
     width: 20%;
     height: 30%;
-    display: inline-block;
+    display: flex;
     border-radius: 5px;
-    padding: 15px 20px;
+    padding: 15px 5px 15px 20px;
     font-size: 22px;
     text-decoration: none;
-    margin: 20px;
     color: white;
     background: #55acee;
     box-shadow: 0 10px 0 #3C93D5;
     transition: .3s;
     cursor: pointer;
-    position: relative;  
+    flex-grow: 1; 
+    position: relative;
+
+    @media (max-width: 1024px) {
+        height: 25%;
+    }
+
+    @media (max-width: 768px) {
+        width: calc(100% / 4);
+    }
+
+    @media (max-width: 520px) {
+        width: calc(100% / 3);
+    }
+
+    @media (max-width: 375px) {
+        width: 100%;
+    }
 
     &Wrapper {
-        width: 80%;
-        height: 90%;
+        width: 30%;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+
+        @media (max-width: 1024px) {
+            width: 80%;
+            font-size: 18px;
+        }
+
+        @media (max-width: 520px) {
+            width: 60%;
+        }
     }
 
     &Edit {
